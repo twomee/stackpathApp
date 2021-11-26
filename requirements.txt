@@ -1,0 +1,5 @@
+Flask~=2.0.2
+requests~=2.26.0
+jproperties~=2.1.1
+redis~=3.5.3
+python-dateutil~=2.8.2

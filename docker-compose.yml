@@ -1,0 +1,21 @@
+version: '3'
+services:
+    redis:
+        image: redis:latest
+        command: --port 6000
+        ports:
+            - "6000:6000"
+    stackpath-app:
+        build: .
+        ports:
+            - "5000:5000"
+        links:
+            - redis
+        depends_on:
+            - redis
+        environment:
+            - REDIS_HOST=redis
+
+
+#to run it: sudo docker-compose up
+
